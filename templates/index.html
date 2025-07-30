@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pilgrim Predictor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='Background.jpeg') }}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            color: #00796b;
+            margin-bottom: 25px;
+        }
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 25px;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-image: url("{{ url_for('static', filename='TTD-Logo.png') }}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        label {
+            font-weight: 500;
+            display: block;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #00796b;
+            color: white;
+            padding: 12px 20px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: #00695c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+           
+        </div>
+        <h2>Predict Number of Pilgrims</h2>
+
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" value="{{ default_date }}">
+
+        <label for="is_weekend">Is it a Weekend? (1 = Yes, 0 = No):</label>
+        <input type="number" id="is_weekend" min="0" max="1" value="0">
+
+        <label for="is_holiday">Is it a Holiday? (1 = Yes, 0 = No):</label>
+        <input type="number" id="is_holiday" min="0" max="1" value="0">
+
+        <label for="festival_name">Festival Name:</label>
+        <input type="text" id="festival_name" placeholder="e.g. Ugadi">
+
+        <button onclick="predict()">Predict</button>
+
+        <h3 id="output"></h3>
+    </div>
+
+    <script>
+        function predict() {
+            const data = {
+                date: document.getElementById("date").value,
+                is_weekend: parseInt(document.getElementById("is_weekend").value),
+                is_holiday: parseInt(document.getElementById("is_holiday").value),
+                festival_name: document.getElementById("festival_name").value.trim()
+            };
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.prediction !== undefined) {
+                    document.getElementById("output").innerText =
+                        "Predicted Pilgrims: " + result.prediction.toLocaleString();
+                } else {
+                    document.getElementById("output").innerText = "Error: " + result.error;
+                }
+            })
+            .catch(err => {
+                document.getElementById("output").innerText = "Error predicting.";
+                console.error(err);
+            });
+        }
+    </script>
+</body>
+</html>

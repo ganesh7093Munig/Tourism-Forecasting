@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nearby Tourist Places Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            background: url('{{ url_for('static', filename='background3.jpg') }}') no-repeat center center/cover ;
+            
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            width: 700px; /* Increased width */
+        }
+        form {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        select, input[type="number"], button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        iframe {
+            margin-top: 30px;
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 align="center">Find Nearby Tourist Places</h2>
+
+    <form method="POST">
+        <div class="form-group">
+        <label for="base_place">Select your place:</label>
+        <select name="base_place" id="base_place" required>
+            <option value="">--Select--</option>
+            <option value="1" >Sri Venkateswara Temple</option>
+            <option value="2" >Sri Padmavathi Temple</option>
+            <option value="3" >Kapila Theertham</option>
+            <option value="4" >Govindaraja Swamy Temple</option>
+            <option value="5" >Sri Kalahasti Temple</option>
+            <option value="6" >Kanipakam Temple</option>
+            <option value="7" >Sri Venkateswara Zoological Park</option>
+            <option value="8" >Sri Vari Museum</option>
+            <option value="9" >Alivelu Mangapuram</option>
+            <option value="10" >Srinivasa Mangapuram</option>
+        </select>
+
+        <label for="distance">Enter maximum distance (in km):</label>
+        <input type="number" step="any" name="distance" id="distance" placeholder="e.g. 10" value="{{ request.form.distance or '' }}"  required>
+
+        <button type="submit">Find Nearby Places</button>
+    </div>
+    </form>
+
+    {% if results %}
+    <h3>Nearby Places Found:</h3>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Place Name</th>
+            <th>Attraction</th>
+            <th>Category</th>
+            <th>Distance (km)</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{ row['Rank'] }}</td>
+            <td>{{ row['Place Name'] }}</td>
+            <td>{{ row['God/Goddess/Attraction'] }}</td>
+            <td>{{ row['Category'] }}</td>
+            <td>{{ "%.2f" | format(row['Distance (km)']) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <iframe src="{{ url_for('static', filename='recommended_map.html') }}"></iframe>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f468892d200301eeecbafb198fdc926b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f468892d200301eeecbafb198fdc926b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f468892d200301eeecbafb198fdc926b = L.map(
+                "map_f468892d200301eeecbafb198fdc926b",
+                {
+                    center: [13.6833, 79.3474],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a491fece74c3feb4976b7843befa1b5f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_a491fece74c3feb4976b7843befa1b5f.addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var marker_cluster_0da79004cb46474ec285ee697f18a6e3 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_a2fbb01d7c029a9b7bacb60638589165 = L.marker(
+                [13.6833, 79.3474],
+                {}
+            ).addTo(marker_cluster_0da79004cb46474ec285ee697f18a6e3);
+        
+    
+            var icon_3661b7322d1da56b8f39856f10c2cfb0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a2fbb01d7c029a9b7bacb60638589165.setIcon(icon_3661b7322d1da56b8f39856f10c2cfb0);
+        
+    
+        var popup_49284743aa51b437d4be9147915fc2e3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_29b0abd6d15f8bddfe792534920a86e9 = $(`<div id="html_29b0abd6d15f8bddfe792534920a86e9" style="width: 100.0%; height: 100.0%;">Sri Venkateswara Temple, Tirumala (0.03 km)</div>`)[0];
+                popup_49284743aa51b437d4be9147915fc2e3.setContent(html_29b0abd6d15f8bddfe792534920a86e9);
+            
+        
+
+        marker_a2fbb01d7c029a9b7bacb60638589165.bindPopup(popup_49284743aa51b437d4be9147915fc2e3)
+        ;
+
+        
+    
+    
+            var marker_8bf14ccc1c43993b00e75024703c1f89 = L.marker(
+                [13.6833, 79.35],
+                {}
+            ).addTo(marker_cluster_0da79004cb46474ec285ee697f18a6e3);
+        
+    
+            var icon_e76c05e3d705654082e22c5bdc5af59a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_8bf14ccc1c43993b00e75024703c1f89.setIcon(icon_e76c05e3d705654082e22c5bdc5af59a);
+        
+    
+        var popup_9998a2ad30e4d90172e7210a307ee6f3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c7ed345dd862232e3a00f2c7ea3aa334 = $(`<div id="html_c7ed345dd862232e3a00f2c7ea3aa334" style="width: 100.0%; height: 100.0%;">Deer Park, Tirumala (0.30 km)</div>`)[0];
+                popup_9998a2ad30e4d90172e7210a307ee6f3.setContent(html_c7ed345dd862232e3a00f2c7ea3aa334);
+            
+        
+
+        marker_8bf14ccc1c43993b00e75024703c1f89.bindPopup(popup_9998a2ad30e4d90172e7210a307ee6f3)
+        ;
+
+        
+    
+    
+            var marker_d65e75dcc8d8a10dd2faef70cfba1f03 = L.marker(
+                [13.6833, 79.35],
+                {}
+            ).addTo(marker_cluster_0da79004cb46474ec285ee697f18a6e3);
+        
+    
+            var icon_07e9d0efb933c355941b5dcc6a690368 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d65e75dcc8d8a10dd2faef70cfba1f03.setIcon(icon_07e9d0efb933c355941b5dcc6a690368);
+        
+    
+        var popup_3bd2966f06246c667ad69b3514434fd0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c53e663d4ef49f070fc4c9de0a58ca49 = $(`<div id="html_c53e663d4ef49f070fc4c9de0a58ca49" style="width: 100.0%; height: 100.0%;">Sri Govindaraja Swamy Temple, Tirupati (0.30 km)</div>`)[0];
+                popup_3bd2966f06246c667ad69b3514434fd0.setContent(html_c53e663d4ef49f070fc4c9de0a58ca49);
+            
+        
+
+        marker_d65e75dcc8d8a10dd2faef70cfba1f03.bindPopup(popup_3bd2966f06246c667ad69b3514434fd0)
+        ;
+
+        
+    
+    
+            var marker_392a377ab78cc20768a54e76e883949c = L.marker(
+                [13.6833, 79.35],
+                {}
+            ).addTo(marker_cluster_0da79004cb46474ec285ee697f18a6e3);
+        
+    
+            var icon_81b34576b3e3fbaa31082c855a88af23 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_392a377ab78cc20768a54e76e883949c.setIcon(icon_81b34576b3e3fbaa31082c855a88af23);
+        
+    
+        var popup_3601a01652138bf265912a450e15c120 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4690b6b2d9cd7a053dc12cf8d45859a6 = $(`<div id="html_4690b6b2d9cd7a053dc12cf8d45859a6" style="width: 100.0%; height: 100.0%;">Silathoranam, Tirumala (0.30 km)</div>`)[0];
+                popup_3601a01652138bf265912a450e15c120.setContent(html_4690b6b2d9cd7a053dc12cf8d45859a6);
+            
+        
+
+        marker_392a377ab78cc20768a54e76e883949c.bindPopup(popup_3601a01652138bf265912a450e15c120)
+        ;
+
+        
+    
+    
+            var marker_232f4849425ed6fec0ea9ebfc9a49454 = L.marker(
+                [13.6833, 79.35],
+                {}
+            ).addTo(marker_cluster_0da79004cb46474ec285ee697f18a6e3);
+        
+    
+            var icon_37f7907d40066be3827e5ba364f36115 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_232f4849425ed6fec0ea9ebfc9a49454.setIcon(icon_37f7907d40066be3827e5ba364f36115);
+        
+    
+        var popup_d25c907cb732430e6993796bfbb5ea25 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_785c1c9af7061c31ea7d55089de3c9bc = $(`<div id="html_785c1c9af7061c31ea7d55089de3c9bc" style="width: 100.0%; height: 100.0%;">Chakra Theertham, Tirumala (0.30 km)</div>`)[0];
+                popup_d25c907cb732430e6993796bfbb5ea25.setContent(html_785c1c9af7061c31ea7d55089de3c9bc);
+            
+        
+
+        marker_232f4849425ed6fec0ea9ebfc9a49454.bindPopup(popup_d25c907cb732430e6993796bfbb5ea25)
+        ;
+
+        
+    
+    
+            var marker_35e6fcf7c1526c4b055ff090aeffed5d = L.marker(
+                [13.6833, 79.35],
+                {}
+            ).addTo(marker_cluster_0da79004cb46474ec285ee697f18a6e3);
+        
+    
+            var icon_2581b12d003b347b2be6a69f8e85fd27 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_35e6fcf7c1526c4b055ff090aeffed5d.setIcon(icon_2581b12d003b347b2be6a69f8e85fd27);
+        
+    
+        var popup_9de122273a477bfbddb1655e3a9aa443 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_47a7896b64b6e821e7be0303d8cb3136 = $(`<div id="html_47a7896b64b6e821e7be0303d8cb3136" style="width: 100.0%; height: 100.0%;">Japali Theertham, Tirumala (0.30 km)</div>`)[0];
+                popup_9de122273a477bfbddb1655e3a9aa443.setContent(html_47a7896b64b6e821e7be0303d8cb3136);
+            
+        
+
+        marker_35e6fcf7c1526c4b055ff090aeffed5d.bindPopup(popup_9de122273a477bfbddb1655e3a9aa443)
+        ;
+
+        
+    
+    
+            var marker_5cd61d390aef30db6a158e1a9e086a74 = L.marker(
+                [13.6833, 79.35],
+                {}
+            ).addTo(marker_cluster_0da79004cb46474ec285ee697f18a6e3);
+        
+    
+            var icon_3f35db209e3014acc5456c646dbff6dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5cd61d390aef30db6a158e1a9e086a74.setIcon(icon_3f35db209e3014acc5456c646dbff6dd);
+        
+    
+        var popup_c3882c667099bb945416ef7f1ca77974 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f3600dd00e0525fbc62a63fc97c543a5 = $(`<div id="html_f3600dd00e0525fbc62a63fc97c543a5" style="width: 100.0%; height: 100.0%;">Akasa Ganga Theertham, Tirumala (0.30 km)</div>`)[0];
+                popup_c3882c667099bb945416ef7f1ca77974.setContent(html_f3600dd00e0525fbc62a63fc97c543a5);
+            
+        
+
+        marker_5cd61d390aef30db6a158e1a9e086a74.bindPopup(popup_c3882c667099bb945416ef7f1ca77974)
+        ;
+
+        
+    
+    
+            var marker_04193e9ce4a7b350478dee44348992ab = L.marker(
+                [13.6833, 79.35],
+                {}
+            ).addTo(marker_cluster_0da79004cb46474ec285ee697f18a6e3);
+        
+    
+            var icon_4c820a062936bc9e5cf12a0ba270ddf1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_04193e9ce4a7b350478dee44348992ab.setIcon(icon_4c820a062936bc9e5cf12a0ba270ddf1);
+        
+    
+        var popup_32d56246faff199f586fb3df75e2f34a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_611336feaa6feeb221b088e47ec3c783 = $(`<div id="html_611336feaa6feeb221b088e47ec3c783" style="width: 100.0%; height: 100.0%;">Papavinasanam Theertham, Tirumala (0.30 km)</div>`)[0];
+                popup_32d56246faff199f586fb3df75e2f34a.setContent(html_611336feaa6feeb221b088e47ec3c783);
+            
+        
+
+        marker_04193e9ce4a7b350478dee44348992ab.bindPopup(popup_32d56246faff199f586fb3df75e2f34a)
+        ;
+
+        
+    
+    
+            marker_cluster_0da79004cb46474ec285ee697f18a6e3.addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var marker_c18449a71424b4f46c7a600c954086e5 = L.marker(
+                [13.6833, 79.3474],
+                {}
+            ).addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var icon_4973c237704cbf2b8dbf39cc00c5f8c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c18449a71424b4f46c7a600c954086e5.setIcon(icon_4973c237704cbf2b8dbf39cc00c5f8c5);
+        
+    
+        var popup_20873520e4cc12e843c37a82e6a7dd96 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_917c1bd207da63493a020e6f2a71bf12 = $(`<div id="html_917c1bd207da63493a020e6f2a71bf12" style="width: 100.0%; height: 100.0%;">Base: Sri Vari Museum</div>`)[0];
+                popup_20873520e4cc12e843c37a82e6a7dd96.setContent(html_917c1bd207da63493a020e6f2a71bf12);
+            
+        
+
+        marker_c18449a71424b4f46c7a600c954086e5.bindPopup(popup_20873520e4cc12e843c37a82e6a7dd96)
+        ;
+
+        
+    
+    
+            var poly_line_f00f2f9f221a4a19602245f2314bc94e = L.polyline(
+                [[13.6833, 79.3474], [13.6833, 79.3474]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var poly_line_f20b90c208d43d42ab3fc340f4bd1095 = L.polyline(
+                [[13.6833, 79.3474], [13.6833, 79.35]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var poly_line_ca9fbe6bf1587ccc43e33f98d9fd2b3b = L.polyline(
+                [[13.6833, 79.3474], [13.6833, 79.35]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var poly_line_f56693af1dddb31a2ba075d81481de88 = L.polyline(
+                [[13.6833, 79.3474], [13.6833, 79.35]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var poly_line_edd9da7b0fb3f9bc6d0533bfa14d9305 = L.polyline(
+                [[13.6833, 79.3474], [13.6833, 79.35]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var poly_line_b29e3cceb0435f5f122f9215e1c33ff2 = L.polyline(
+                [[13.6833, 79.3474], [13.6833, 79.35]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var poly_line_ebc5fb3fc664e33eef3d6212f0466367 = L.polyline(
+                [[13.6833, 79.3474], [13.6833, 79.35]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+    
+            var poly_line_c00abbf0d62e32382c73c011a2bf0316 = L.polyline(
+                [[13.6833, 79.3474], [13.6833, 79.35]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f468892d200301eeecbafb198fdc926b);
+        
+</script>
+</html>
